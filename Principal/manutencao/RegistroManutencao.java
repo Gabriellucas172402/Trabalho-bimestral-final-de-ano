@@ -2,7 +2,6 @@ package Principal.manutencao;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class RegistroManutencao implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -28,7 +27,6 @@ public class RegistroManutencao implements Serializable {
         this.custo = custo;
         this.status = status;
     }
-
 
     public String getIdRegistro() {
         return idRegistro;
@@ -66,5 +64,32 @@ public class RegistroManutencao implements Serializable {
         return tipoManutencao;
     }
 
+
     public void setTipoManutencao(String tipoManutencao) {
-        this.tipoManutencao
+        this.tipoManutencao = tipoManutencao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public double getCusto() {
+        return custo;
+    }
+
+    public void setCusto(double custo) {
+        this.custo = custo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+}
