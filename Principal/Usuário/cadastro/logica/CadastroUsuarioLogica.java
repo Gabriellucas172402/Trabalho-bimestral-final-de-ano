@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package Principal.Usuário.cadastro.logica;
 
+import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
@@ -7,46 +8,37 @@ import java.awt.event.ActionListener;
 
 public class CadastroUsuarioLogica {
     public static void main(String[] args) {
-        Scanner leia = new Scanner(System.in);
+        
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite seu nome completo: ");
-        String nome = leia.nextLine();
+        String nome = scanner.nextLine();
 
-        System.out.print("Digite seu cpf : ");
-        int cpf = leia.nextInt();
-      
-        System.out.print("Digite uma senha : ");
-        String senha = leia.nextInt();
+        System.out.print("Digite seu CPF: ");
+        String cpf = scanner.next(); 
 
+        System.out.print("Digite uma senha: ");
+        String senha = scanner.next();
 
-
-
-    
-        JFrame janela = new JFrame("Cadastro");
-        janela.setSize(300, 200);
+        JFrame janela = new JFrame("Cadastro de Usuário");
+        janela.setSize(350, 200);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janela.setLayout(null);
+        janela.setLocationRelativeTo(null); 
 
-       
-        JButton botao = new JButton("Cadastrar");
-        botao.setBounds(80, 60, 140, 40); 
+        JButton botaoCadastrar = new JButton("Cadastrar");
+        botaoCadastrar.setBounds(100, 70, 140, 40);
 
-        botao.addActionListener(new ActionListener() {
+ 
+        botaoCadastrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("O botão foi clicado!");
+                System.out.println("Cadastro realizado com sucesso para o usuário: " + nome);
             }
         });
 
-      
-        janela.add(botao);
+        janela.add(botaoCadastrar);
         janela.setVisible(true);
-}
-
-
-
-        
-        leia.close();
+        scanner.close();
     }
 }
-
