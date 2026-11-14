@@ -22,7 +22,6 @@ public class LoginVisual extends JFrame {
         btnGerente.setBounds(60, 70, 220, 35);
         btnGerente.addActionListener(e -> {
             dispose();
-           
             new MenuPrincipalVisual("Gerente Geral").setVisible(true);
         });
         add(btnGerente);
@@ -31,8 +30,7 @@ public class LoginVisual extends JFrame {
         btnFuncionario.setBounds(60, 120, 220, 35);
         btnFuncionario.addActionListener(e -> {
             dispose();
-           
-            JOptionPane.showMessageDialog(this, "Abrindo painel do Funcionário...");
+            new FuncionarioVisual().setVisible(true);
         });
         add(btnFuncionario);
     }
