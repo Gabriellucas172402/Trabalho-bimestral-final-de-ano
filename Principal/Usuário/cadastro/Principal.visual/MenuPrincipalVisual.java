@@ -1,14 +1,17 @@
 package Principal.visual;
 
 import Principal.frota.visual.CaminhaoVisual;
+import Principal.carga.CargaEntrega;
+import Principal.carga.Produto;
+import Principal.motorista.Motorista;
 import javax.swing.*;
 import java.awt.*;
 
 public class MenuPrincipalVisual extends JFrame {
 
     public MenuPrincipalVisual(String nomeUsuario) {
-        setTitle("Sistema Frota Coca-Cola - Menu Principal");
-        setSize(450, 420);
+        setTitle("Sistema Frota Coca-Cola - Menu Principal (Gerente)");
+        setSize(450, 440);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -18,7 +21,7 @@ public class MenuPrincipalVisual extends JFrame {
         lblBoasVindas.setFont(new Font("Arial", Font.BOLD, 16));
         add(lblBoasVindas);
 
-        JLabel lblSub = new JLabel("Escolha o módulo que deseja gerenciar:");
+        JLabel lblSub = new JLabel("Painel de Controle e Logística:");
         lblSub.setBounds(30, 50, 380, 20);
         add(lblSub);
 
@@ -32,22 +35,34 @@ public class MenuPrincipalVisual extends JFrame {
         JButton btnCargas = new JButton("Gerenciar Cargas e Produtos");
         btnCargas.setBounds(50, 145, 330, 40);
         btnCargas.addActionListener(e -> {
+            CargaEntrega cargaExemplo = new CargaEntrega("CARGA-2026-A");
             JOptionPane.showMessageDialog(this, 
-                "Módulo de Cargas Conectado!\nGerencie os produtos, peso total estimado e status das entregas.", 
-                "Cargas e Produtos", 
+                "Módulo de Cargas Conectado!\nStatus da Carga: " + cargaExemplo.getStatusCarga() + 
+                "\nCódigo: " + cargaExemplo.getCodigoCarga(), 
+                "Gestão de Cargas", 
                 JOptionPane.INFORMATION_MESSAGE);
         });
         add(btnCargas);
 
-        JButton btnMotoristas = new JButton("Gerenciar Motoristas");
+        JButton btnMotoristas = new JButton("Visualizar Funcionários / Motoristas");
         btnMotoristas.setBounds(50, 200, 330, 40);
         btnMotoristas.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Módulo de Motoristas ativo.");
+            JOptionPane.showMessageDialog(this, 
+                "Módulo de Motoristas Conectado!\nGerencie matrículas, CNHs e status ativos da equipe.", 
+                "Gestão de Pessoal", 
+                JOptionPane.INFORMATION_MESSAGE);
         });
         add(btnMotoristas);
 
+        JButton btnManutencao = new JButton("Consultar Manutenções e Oficinas");
+        btnManutencao.setBounds(50, 255, 330, 40);
+        btnManutencao.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Módulo de Manutenção integrado ao sistema.");
+        });
+        add(btnManutencao);
+
         JButton btnSair = new JButton("Sair / Trocar de Conta");
-        btnSair.setBounds(50, 275, 330, 35);
+        btnSair.setBounds(50, 325, 330, 35);
         btnSair.addActionListener(e -> {
             dispose();
             new LoginVisual().setVisible(true);
