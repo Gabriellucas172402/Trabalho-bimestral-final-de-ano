@@ -1,4 +1,3 @@
-
 package Principal.frota.visual;
 
 import Principal.frota.Veiculo;
@@ -54,7 +53,6 @@ public class CaminhaoVisual extends JFrame {
         atualizarTabela(frota);
         add(new JScrollPane(tabela), BorderLayout.CENTER);
 
-        // Painel de Relatório com Filtro
         JPanel painelFiltro = new JPanel(new FlowLayout());
         painelFiltro.setBorder(BorderFactory.createTitledBorder("Relatório com Filtro por Status"));
         painelFiltro.add(new JLabel("Status (ex: Disponível):"));
@@ -69,7 +67,8 @@ public class CaminhaoVisual extends JFrame {
 
         add(painelFiltro, BorderLayout.SOUTH);
 
-        btnSalvar.e -> {
+       
+        btnSalvar.addActionListener(e -> {
             try {
                 String placa = txtPlaca.getText();
                 String modelo = txtModelo.getText();
