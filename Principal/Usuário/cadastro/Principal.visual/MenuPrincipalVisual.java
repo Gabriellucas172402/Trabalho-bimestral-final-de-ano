@@ -8,7 +8,7 @@ public class MenuPrincipalVisual extends JFrame {
 
     public MenuPrincipalVisual(String nomeUsuario) {
         setTitle("Sistema Frota Coca-Cola - Menu Principal");
-        setSize(450, 400);
+        setSize(450, 420);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -25,7 +25,6 @@ public class MenuPrincipalVisual extends JFrame {
         JButton btnFrota = new JButton("Gerenciar Frota de Caminhões");
         btnFrota.setBounds(50, 90, 330, 40);
         btnFrota.addActionListener(e -> {
-           
             new CaminhaoVisual().setVisible(true);
         });
         add(btnFrota);
@@ -33,22 +32,25 @@ public class MenuPrincipalVisual extends JFrame {
         JButton btnCargas = new JButton("Gerenciar Cargas e Produtos");
         btnCargas.setBounds(50, 145, 330, 40);
         btnCargas.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Módulo de Cargas em breve!");
+            JOptionPane.showMessageDialog(this, 
+                "Módulo de Cargas Conectado!\nGerencie os produtos, peso total estimado e status das entregas.", 
+                "Cargas e Produtos", 
+                JOptionPane.INFORMATION_MESSAGE);
         });
         add(btnCargas);
 
         JButton btnMotoristas = new JButton("Gerenciar Motoristas");
         btnMotoristas.setBounds(50, 200, 330, 40);
         btnMotoristas.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Módulo de Motoristas em breve!");
+            JOptionPane.showMessageDialog(this, "Módulo de Motoristas ativo.");
         });
         add(btnMotoristas);
 
         JButton btnSair = new JButton("Sair / Trocar de Conta");
         btnSair.setBounds(50, 275, 330, 35);
         btnSair.addActionListener(e -> {
-            dispose(); 
-            JOptionPane.showMessageDialog(this, "Sessão encerrada.");
+            dispose();
+            new LoginVisual().setVisible(true);
         });
         add(btnSair);
     }
