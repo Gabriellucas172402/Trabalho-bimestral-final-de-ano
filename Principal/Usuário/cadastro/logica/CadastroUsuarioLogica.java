@@ -45,8 +45,6 @@ public class CadastroUsuarioLogica {
 
 
 
-    //fazer dois verificador o id do usuario sera feito por uma lógica usando os dados como cpf nome e data de cadastro cetnão quando o usuario desejar fazer login direto ele colocara
-    //  o id e a senha e iremos usar um verificador para ver se o id faz sentido e se fizer sentido iremos verificar se este id esta cadastrado  
         
         leia.close();
     }
